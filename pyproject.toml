@@ -1,0 +1,40 @@
+[project]
+name = "pac-man"
+version = "0.2.0"
+description = "Pac-Man in Python with mazes from the A-Maze-ing package (42 Vienna project)."
+readme = "README.md"
+authors = [
+    { name = "Anton Dudnik", email = "anton.dudnik@gmail.com" },
+    { name = "olprymas" },
+]
+requires-python = ">=3.10"
+dependencies = [
+    "mazegenerator",
+    "pydantic>=2.0",
+    "pygame>=2.5",
+]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["game*"]
+
+[tool.uv.sources]
+mazegenerator = { path = "assets/mazegenerator-2.1.0-py3-none-any.whl" }
+
+[dependency-groups]
+dev = [
+    "flake8>=7.0",
+    "mypy>=1.10",
+    "pyinstaller>=6.22.3",
+]
+
+[tool.mypy]
+exclude = ["^\\.venv/", "^build/", "^dist/", "test_pacman\\.py$",]
+
+[[tool.mypy.overrides]]
+module = "mazegenerator"
+ignore_missing_imports = true

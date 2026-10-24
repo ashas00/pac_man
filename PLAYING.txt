@@ -1,0 +1,31 @@
+PAC-MAN  -  42 Vienna
+=====================
+
+START
+  itch.io app : press "Launch".
+  terminal    : ./pac-man config.json
+
+CONTROLS
+  Arrows / WASD     move
+  P / ESC           pause menu (resume or back to main menu)
+  UP/DOWN + ENTER   navigate menus
+
+RULES
+  Eat every pacgum to clear a level (10 levels by default).
+  Super-pacgums in the corners make ghosts edible for a few seconds.
+  Touching a normal ghost, or running out of time, costs a life.
+  Score and lives carry over between levels. Enter your name at the end
+  to join the top 10.
+
+CHEATS (for evaluation)
+  I invincible    Z freeze ghosts    B speed boost
+  L skip level    K extra life       F frighten ghosts
+
+CONFIGURATION
+  Edit config.json (comments with #, // or /* */ are allowed).
+  Main keys: lives, level_count, level_max_time, seed, width, height, pacgum,
+  pacgum_percent, player_speed, ghost_speed, points_per_pacgum,
+  points_per_super_pacgum, points_per_ghost, frightened_duration,
+  ghost_respawn_delay, levels.
+  Invalid values are replaced by defaults with a warning in the terminal.
+  Highscores are stored in highscores.json next to the game.
